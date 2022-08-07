@@ -1,11 +1,23 @@
-# install
+# vue3-solid
+
+Here's a brief introduction.
+
+### Installation
+
+$ npm install --save vue3-solid
+
+
+### install
 `npm install --save vue3-solid`
 
-# usage
+### usage
 
-see demo : https://github.com/scenaristeur/vue3-solid-demo
 
-see doc : https://github.com/scenaristeur/vue3-solid-doc
+[demo](https://github.com/scenaristeur/vue3-solid-demo)
+
+[doc](https://github.com/scenaristeur/vue3-solid-doc)
+
+[source](https://github.com/scenaristeur/vue3-solid)
 
 src/main.js
 ```
@@ -50,6 +62,20 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+```
+
+
+### alternatives
+```
+...
+<template>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <InputText />
+  <InputTextarea />
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
+</template>
+...
 
 ```
 

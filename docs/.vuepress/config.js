@@ -42,8 +42,8 @@ module.exports = {
               collapsable: false,
               children: [
                 'standard-component',
-                '/components/input-text.md',
-                '/components/input-textarea.md'
+                'input-text.md',
+                'input-textarea.md'
               ]
             }
           ]

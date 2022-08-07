@@ -9,6 +9,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f https://github.com/scenaristeur/vue3-solid.git master:gh-pages
+git push -f https://github.com/scenaristeur/vue3-solid.git main:gh-pages
 
 cd -
