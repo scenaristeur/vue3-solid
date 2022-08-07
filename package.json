@@ -41,5 +41,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-vue": "^6.0.0",
     "vuepress": "^2.0.0-beta.49"
+  },
+  "dependencies": {
+    "@inrupt/solid-client-authn-browser": "^1.12.2"
   }
 }
