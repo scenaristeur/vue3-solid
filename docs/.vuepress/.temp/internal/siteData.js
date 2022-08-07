@@ -1,0 +1,1 @@
+export const siteData = JSON.parse("{\"base\":\"/vue3-solid/\",\"lang\":\"en-US\",\"title\":\"\",\"description\":\"\",\"head\":[],\"locales\":{\"/\":{\"lang\":\"en-US\",\"title\":\"Vue3-solid 🥂\",\"description\":\"Documentation site for the Vue component library plugin\"}}}")
