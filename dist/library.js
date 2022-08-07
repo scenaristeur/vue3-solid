@@ -1,27 +1,7 @@
 'use strict';
 
 var vue = require('vue');
-var sc = require('@inrupt/solid-client-authn-browser');
-
-function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
-  var n = Object.create(null);
-  if (e) {
-    Object.keys(e).forEach(function (k) {
-      if (k !== 'default') {
-        var d = Object.getOwnPropertyDescriptor(e, k);
-        Object.defineProperty(n, k, d.get ? d : {
-          enumerable: true,
-          get: function () { return e[k]; }
-        });
-      }
-    });
-  }
-  n["default"] = e;
-  return Object.freeze(n);
-}
-
-var sc__namespace = /*#__PURE__*/_interopNamespace(sc);
+require('@inrupt/solid-client-authn-browser');
 
 var script$3 = {
   name: 'InputText'
@@ -72,20 +52,31 @@ var script = {
     this.$showStore();
   },
   methods:{
-    login(){
-      this.logged = true;
+    async login(){
+      // this.logged = true
       //   this.$showStore()
-      //   let params = {issuer : "https://solidcommunity.net", clientName: "My great App"}
-      // let login_message = this.$login(params)
-      // console.log(login_message)
-      this.$store.commit('vue3_solid_store/setSession', "bhu");
-      console.log("session",this.$store.state.vue3_solid_store.session);
+        let params = {issuer : "https://solidcommunity.net", clientName: "My great App"};
+      let login_message = await this.$login(params);
+      console.log(login_message);
+
+      // console.log("session",this.$store.state.vue3_solid_store.session)
     },
-    logout(){
-      this.logged = false;
-      this.$store.commit('vue3_solid_store/setSession', "none");
-      console.log("session",this.$store.state.vue3_solid_store.session);
-      // this.$logout()
+    async logout(){
+      // this.logged = false
+      // this.$store.commit('vue3_solid_store/setSession', "none")
+      // console.log("session",this.$store.state.vue3_solid_store.session)
+      await this.$logout();
+    }
+  },
+  watch:{
+    session(){
+      console.log("session watch",this.session);
+      if (this.session == "login"){
+        this.logged = true;
+      }
+      if (this.session == "logout"){
+        this.logged = false;
+      }
     }
   },
   computed: {
@@ -230,22 +221,23 @@ const Vue3Solid = {
     //
     app.config.globalProperties.$login = async function(params){
       console.log("login", params.issuer);
-      options.store.commit('vue3_solid_store/setSession',"test");
-      if (!sc__namespace.getDefaultSession().info.isLoggedIn) {
-        await sc__namespace.login({
-          oidcIssuer: params.issuer,
-          redirectUrl: window.location.href,
-          clientName: params.clientName
-        });
-      }
+      //options.store.commit('vue3_solid_store/setSession',"test")
+        options.store.commit('vue3_solid_store/setSession', "login");
+      // if (!sc.getDefaultSession().info.isLoggedIn) {
+      //   await sc.login({
+      //     oidcIssuer: params.issuer,
+      //     redirectUrl: window.location.href,
+      //     clientName: params.clientName
+      //   });
+      // }
     };
 
 
     app.config.globalProperties.$logout = async function(){
-      let session = sc__namespace.getDefaultSession();
-      await session.logout();
-      console.log("logout");
-      options.store.commit('vue3_solid_store/setSession',null);
+      // let session = sc.getDefaultSession()
+      // await session.logout()
+      // console.log("logout")
+      options.store.commit('vue3_solid_store/setSession', "logout");
       // store.commit('solid/setPod', null)
       //store.dispatch('nodes/clearStore')
     };

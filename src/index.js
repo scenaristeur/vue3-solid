@@ -61,22 +61,23 @@ const Vue3Solid = {
     //
     app.config.globalProperties.$login = async function(params){
       console.log("login", params.issuer)
-      options.store.commit('vue3_solid_store/setSession',"test")
-      if (!sc.getDefaultSession().info.isLoggedIn) {
-        await sc.login({
-          oidcIssuer: params.issuer,
-          redirectUrl: window.location.href,
-          clientName: params.clientName
-        });
-      }
+      //options.store.commit('vue3_solid_store/setSession',"test")
+        options.store.commit('vue3_solid_store/setSession', "login")
+      // if (!sc.getDefaultSession().info.isLoggedIn) {
+      //   await sc.login({
+      //     oidcIssuer: params.issuer,
+      //     redirectUrl: window.location.href,
+      //     clientName: params.clientName
+      //   });
+      // }
     }
 
 
     app.config.globalProperties.$logout = async function(){
-      let session = sc.getDefaultSession()
-      await session.logout()
-      console.log("logout")
-      options.store.commit('vue3_solid_store/setSession',null)
+      // let session = sc.getDefaultSession()
+      // await session.logout()
+      // console.log("logout")
+      options.store.commit('vue3_solid_store/setSession', "logout")
       // store.commit('solid/setPod', null)
       //store.dispatch('nodes/clearStore')
     }
