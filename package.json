@@ -1,0 +1,42 @@
+{
+  "name": "vue3-solid",
+  "version": "0.0.1",
+  "description": "vue3 library for Solid Project",
+  "main": "disy/library.js",
+  "module": "dist/library.mjs",
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scenaristeur/vue3-solid.git"
+  },
+  "keywords": [
+    "solid",
+    "vue3",
+    "js",
+    "Tim",
+    "Berners",
+    "Lee",
+    "inrupt"
+  ],
+  "author": "scenaristeur",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scenaristeur/vue3-solid/issues"
+  },
+  "homepage": "https://github.com/scenaristeur/vue3-solid#readme",
+  "peerDependencies": {
+    "vue": "^3.2.21"
+  },
+  "devDependencies": {
+    "rollup": "^2.77.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0"
+  }
+}
