@@ -2,22 +2,37 @@
   "name": "vue3-solid",
   "version": "0.0.1",
   "description": "vue3 library for Solid Project",
+  "author": "scenaristeur",
+  "scripts": {
+    "build": "rollup -c",
+    "docs:build": "vuepress build docs",
+    "docs:dev": "vuepress dev docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "main": "disy/library.js",
   "module": "dist/library.mjs",
   "files": [
     "dist/*",
     "src/*"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+  "dependencies": {
+    "@inrupt/solid-client-authn-browser": "^1.12.2",
+    "vuex": "^3.6.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scenaristeur/vue3-solid.git"
+  "devDependencies": {
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "rollup": "^2.77.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-vue": "^6.0.0",
+    "vuepress": "^2.0.0-beta.49"
   },
+  "peerDependencies": {
+    "vue": "^3.2.21"
+  },
+  "bugs": {
+    "url": "https://github.com/scenaristeur/vue3-solid/issues"
+  },
+  "homepage": "https://github.com/scenaristeur/vue3-solid#readme",
   "keywords": [
     "solid",
     "vue3",
@@ -27,22 +42,9 @@
     "Lee",
     "inrupt"
   ],
-  "author": "scenaristeur",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/scenaristeur/vue3-solid/issues"
-  },
-  "homepage": "https://github.com/scenaristeur/vue3-solid#readme",
-  "peerDependencies": {
-    "vue": "^3.2.21"
-  },
-  "devDependencies": {
-    "rollup": "^2.77.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-vue": "^6.0.0",
-    "vuepress": "^2.0.0-beta.49"
-  },
-  "dependencies": {
-    "@inrupt/solid-client-authn-browser": "^1.12.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scenaristeur/vue3-solid.git"
   }
 }
